@@ -1,0 +1,1 @@
+from lyricwiki import *
