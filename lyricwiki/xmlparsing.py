@@ -74,3 +74,11 @@ def parse_disco(xml_file):
                     
     return artist
     
+def find_album(title, xml_file):
+    
+    xml_object = etree.fromstring(xml_file)
+    for album in _get_album_objects(xml_object):
+        for song in album.song_objects:
+            if song.text == title:
+                return album.album_name
+    

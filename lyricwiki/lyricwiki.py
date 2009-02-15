@@ -57,6 +57,11 @@ def load_link(url):
     f.close()
     return data   
 
+def find_album(artist, title):
+    #workaround because of missing implementation on lyricwiki
+    data = fetch_albums(artist)
+    album = xmlparsing.find_album(title, data)
+    return album
 
 
     
